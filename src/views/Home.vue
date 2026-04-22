@@ -19,5 +19,15 @@ import FooterTemplate from '../components/FooterTemplate.vue'
 </template>
 
 <style scoped>
+.banner {
+    width: 100%;
+    height: 32.5rem;
+    margin: -1rem 0;
+}
 
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 </style>
