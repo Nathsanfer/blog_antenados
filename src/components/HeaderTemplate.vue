@@ -73,7 +73,7 @@
   border-radius: 999px;
   background-color: var(--color-green);
   transition: width 0.3s ease;
-}
+}     
 
 .nav-link.router-link-exact-active::after {
   width: 100%;
@@ -134,6 +134,29 @@
   .login-button {
     padding: 6px 10px;
     font-size: 10px;
+  }
+}
+
+@media (max-width: 410px) {
+  .header {
+    padding: 5px 20px;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .nav-link::after {
+    height: 1px;
+  }
+
+  .login-button {
+    padding: 6px 8px;
+    font-size: 8px;
   }
 }
 </style>
