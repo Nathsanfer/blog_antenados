@@ -13,6 +13,7 @@ export default {
 
 <template>
   <HeaderTemplate />
+  
   <div class="banner">
     <img src="../assets/banner.png" alt="Banner" />
   </div>
@@ -173,6 +174,66 @@ export default {
       />
     </div>
   </section>
+
+  <section class="recent-posts">
+    <div class="section-header">
+      <div class="divisor"></div>
+      <h1 class="title2">Postagens Recentes</h1>
+      <div class="divisor"></div>
+    </div>
+    <div class="posts">
+      <div class="card">
+        <img src="../assets/post.jpg" alt="Imagem para a postagem" />
+        <p class="text-categorie">ARTES E EXPRESSÃO</p>
+        <h4 class="title-post">
+          Cada cor, uma marca: histórias pintadas na escola
+        </h4>
+        <p class="brief-content">
+          Em meio a cores, pincéis e muita criatividade, os alunos transformaram
+          um simples muro em uma verdadeira obra de arte. Mais do que uma
+          atividade artística, o projeto representou a...
+          <strong>Ler Mais</strong>
+        </p>
+        <div class="divisor-post"></div>
+        <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+      </div>
+      <div class="card">
+        <img src="../assets/post.jpg" alt="Imagem para a postagem" />
+        <p class="text-categorie">ARTES E EXPRESSÃO</p>
+        <h4 class="title-post">
+          Cada cor, uma marca: histórias pintadas na escola
+        </h4>
+        <p class="brief-content">
+          Em meio a cores, pincéis e muita criatividade, os alunos transformaram
+          um simples muro em uma verdadeira obra de arte. Mais do que uma
+          atividade artística, o projeto representou a...
+          <strong>Ler Mais</strong>
+        </p>
+        <div class="divisor-post"></div>
+        <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+      </div>
+      <div class="card">
+        <img src="../assets/post.jpg" alt="Imagem para a postagem" />
+        <p class="text-categorie">ARTES E EXPRESSÃO</p>
+        <h4 class="title-post">
+          Cada cor, uma marca: histórias pintadas na escola
+        </h4>
+        <p class="brief-content">
+          Em meio a cores, pincéis e muita criatividade, os alunos transformaram
+          um simples muro em uma verdadeira obra de arte. Mais do que uma
+          atividade artística, o projeto representou a...
+          <strong>Ler Mais</strong>
+        </p>
+        <div class="divisor-post"></div>
+        <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+      </div>
+    </div>
+    <router-link class="link-btn" to="#">
+      <button class="btn">Ver Mais</button>
+    </router-link>
+  </section>
+
+  <FooterTemplate />
 </template>
 
 <style scoped>
@@ -199,8 +260,8 @@ export default {
 }
 
 .title1 {
-  font-size: 34px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 500  ;
   font-family: var(--secondary-font);
   margin-bottom: 20px;
   width: 18rem;
@@ -220,8 +281,8 @@ export default {
 }
 
 .container-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -250,7 +311,7 @@ export default {
 
 .name-theme {
   font-size: 12px;
-  width: 100px;
+  width: 80px;
   text-align: center;
   font-family: var(--primary-font);
 }
@@ -296,8 +357,13 @@ export default {
 
 .title2 {
   font-size: 34px;
-  font-weight: bold;
+  font-weight: 500;
   font-family: var(--secondary-font);
+}
+
+.recent-posts div:nth-child(1) .title2 {
+  width: 870px;
+  text-align: center;
 }
 
 .container-topics {
@@ -509,7 +575,7 @@ export default {
 
 .title3 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
   font-family: var(--secondary-font);
   margin-bottom: 1rem;
 }
@@ -549,7 +615,7 @@ export default {
   font-weight: 600;
   font-family: var(--primary-font);
   padding: 0;
-    margin: 0;
+  margin: 0;
 }
 
 .text {
@@ -557,5 +623,94 @@ export default {
   font-family: var(--primary-font);
   padding: 0;
   margin: 0;
+}
+
+.recent-posts {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.posts {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.card img {
+  width: 300px;
+  height: 180px;
+  border-radius: 20px 20px 0 0;
+}
+
+.text-categorie {
+  font-size: 11px;
+  font-family: var(--primary-font);
+  color: #da4167;
+  margin: 0;
+  padding: 0.6rem 0.6rem 0rem 0.6rem;
+}
+
+.title-post {
+  font-size: 21.4px;
+  font-weight: 500;
+  font-family: var(--secondary-font);
+  margin: 0;
+  padding: 0rem 0.6rem;
+}
+
+.brief-content {
+  font-size: 10px;
+  font-family: var(--primary-font);
+  margin: 0;
+  font-weight: 250;
+  padding: 0rem 0.6rem;
+}
+
+.divisor-post {
+  width: 95%;
+  height: 1px;
+  background-color: #cac9c959;
+  margin: 0 auto;
+}
+
+.author-post {
+  font-size: 11px;
+  font-family: var(--primary-font);
+  color: #333333;
+  margin: 0;
+  padding: 0 0.6rem 0.9rem 0.6rem;
+}
+
+.author-post span {
+  color: #da4167;
+  font-weight: 400;
+}
+
+.btn {
+  padding: 8px 45px;
+  background-color: var(--color-green);
+  color: white;
+  border-radius: 20px;
+  border: navajowhite;
+  cursor: pointer;
+  margin-top: 2rem;
 }
 </style>
