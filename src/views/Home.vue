@@ -257,6 +257,7 @@ export default {
   align-items: center;
   gap: 5rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .title1 {
@@ -264,13 +265,17 @@ export default {
   font-weight: 500  ;
   font-family: var(--secondary-font);
   margin-bottom: 20px;
-  width: 18rem;
+  width: 100%;
+  max-width: 18rem;
 }
 
 .list-themes {
   display: flex;
   gap: 3rem;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
 }
 
 .item {
@@ -359,11 +364,14 @@ export default {
   font-size: 34px;
   font-weight: 500;
   font-family: var(--secondary-font);
+  white-space: nowrap; /* evita o titulo quebrar com a linha */
 }
 
 .recent-posts div:nth-child(1) .title2 {
-  width: 870px;
+  width: 100%;
+  max-width: 870px;
   text-align: center;
+  white-space: normal;
 }
 
 .container-topics {
@@ -381,6 +389,7 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
 }
 
 .item {
@@ -512,7 +521,9 @@ export default {
 .insight {
   position: relative;
   width: 80%;
-  height: 220px;
+  min-height: 220px;
+  height: auto;
+  padding: 2rem 0;
   margin: 0 auto;
   margin-top: 6rem;
   outline: 2px solid transparent;
@@ -582,14 +593,16 @@ export default {
 
 .word {
   font-size: 15px;
-  width: 70%;
+  width: 90%;
+  max-width: 700px;
   font-family: var(--primary-font);
   text-align: center;
   font-style: italic;
 }
 
 .author {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   display: flex;
   justify-content: center;
@@ -639,11 +652,14 @@ export default {
 .posts {
   width: 85%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  justify-content: center;
 }
 
 .card {
-  width: 300px;
+  width: 100%;
+  max-width: 380px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -655,7 +671,8 @@ export default {
 }
 
 .card img {
-  width: 300px;
+  width: 100%;
+  max-width: 380px;
   height: 180px;
   border-radius: 20px 20px 0 0;
 }
@@ -712,5 +729,200 @@ export default {
   border: navajowhite;
   cursor: pointer;
   margin-top: 2rem;
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .categories {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .title1 {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .list-themes {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .item-theme {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: 150px;
+  }
+
+  .container-topics {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .container-divisor {
+    display: none;
+  }
+
+  .item-objective1,
+  .item-objective2 {
+    width: 100%;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .item-object2 .item{
+    flex-direction: column-reverse;
+  }
+
+  .topic-content1,
+  .topic-content2 {
+    align-items: center;
+  }
+
+  .topic-content2 {
+    text-align: center;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .title2 {
+    font-size: 28px;
+  }
+
+  .insight {
+    width: 90%;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .word {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .author {
+    width: 100%;
+  }
+
+  .icon-top-right,
+  .icon-bottom-left {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-top-right {
+    top: -15px;
+    right: -15px;
+  }
+
+  .icon-bottom-left {
+    bottom: -15px;
+    left: -15px;
+  }
+
+  .posts {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  .title1 {
+    font-size: 20px;
+  }
+
+  .item-theme {
+    flex: 0 0 100%;
+    max-width: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    gap: 1.5rem;
+  }
+
+  .container-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .name-theme {
+    font-size: 16px;
+    width: auto;
+    text-align: left;
+  }
+
+  .title2 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .insight {
+    margin-top: 3rem;
+  }
+
+  .title3 {
+    font-size: 20px;
+  }
+
+  .word {
+    font-size: 13px;
+  }
+
+  .author {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .author img {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .recent-posts {
+    width: 90%;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .title-post {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
 }
 </style>
