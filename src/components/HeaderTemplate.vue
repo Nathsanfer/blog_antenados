@@ -43,8 +43,8 @@
 }
 
 .title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 29px;
+  font-weight: 500;
   font-family: var(--secondary-font);
 }
 
