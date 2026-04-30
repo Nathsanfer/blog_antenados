@@ -2,7 +2,7 @@
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 import FooterTemplate from "../components/FooterTemplate.vue";
 export default {
-  name: "Destaques",
+  name: "Blog",
   components: {
     HeaderTemplate,
     FooterTemplate,
@@ -29,11 +29,32 @@ export default {
         <img src="../assets/icons_highlights/icon13.png" alt="" />
       </div>
       <h3 class="title-categorie">Categorias</h3>
-        <div class="categories">
-            <div class="category">
-                <p>Artes e Expressão</p>
-            </div>
+      <div class="categories">
+        <div class="category">
+          <p>Projetos Ciêntificos</p>
         </div>
+        <div class="category">
+          <p>Folclore</p>
+        </div>
+        <div class="category">
+          <p>Consciência Negra</p>
+        </div>
+        <div class="category">
+          <p>Artes e Expressão</p>
+        </div>
+      </div>
+      <h3 class="title-jornal">Jornais</h3>
+      <div class="jornals">
+        <div class="jornal">
+          <p>1º Edição do Jornal</p>
+        </div>
+        <div class="jornal">
+          <p>2º Edição do Jornal</p>
+        </div>
+        <div class="jornal">
+          <p>3º Edição do Jornal</p>
+        </div>
+      </div>
     </div>
 
     <div class="container-right">
@@ -176,6 +197,7 @@ export default {
       </div>
     </div>
   </main>
+  <FooterTemplate />
 </template>
 
 <style scoped>
@@ -209,15 +231,14 @@ main {
   display: flex;
   width: 85%;
   margin: 0 auto;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; 
   flex-direction: row;
   margin-top: 2rem;
 }
 
 .container-left {
   width: 22%;
-  height: 400px;
+  height: auto;
 }
 
 .search-bar {
@@ -237,7 +258,6 @@ main {
   color: #b7b7b7;
   margin: 0;
   padding: 0.7rem;
-  
 }
 
 .search-bar img {
@@ -256,31 +276,70 @@ main {
 }
 
 .categories {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .category {
-    width: 100%;
-    height: 40px;
-    background-color: rgb(201, 134, 34);
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 45px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/image1.png");
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .category p {
-    font-size: 12px;
-    font-family: var(--primary-font);
-    color: #ffffff;
-    margin: 0;
-    padding: 0.7rem;
+  font-size: 12px;
+  font-family: var(--primary-font);
+  color: #ffffff;
+  margin: 0;
+  padding: 0.7rem;
+}
+
+.title-jornal {
+  font-size: 19px;
+  font-weight: 500;
+  font-family: var(--secondary-font);
+  color: #000000;
+  margin: 1.5rem 0.5rem 0.5rem 0.3rem;
+}
+
+.jornals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jornal {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jornal p {
+  font-size: 12px;
+  font-family: var(--primary-font);
+  color: #333333;
+  margin: 0;
+  padding: 0.7rem;
 }
 
 .container-right {
   width: 76%;
-  height: 400px;
+  height: auto;
 }
 
 .posts-grid {
