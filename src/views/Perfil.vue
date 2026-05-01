@@ -3,7 +3,7 @@ import FooterTemplate from "../components/FooterTemplate.vue";
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 
 export default {
-  name: "Criações",
+  name: "Perfil",
   components: {
     HeaderTemplate,
     FooterTemplate,
@@ -12,13 +12,13 @@ export default {
 </script>
 
 <template>
-  <HeaderTemplate />    
+<HeaderTemplate />    
   
     <div class="header-page">
     <img src="../assets/icons_highlights/icon9.png" alt="Icone de Beca" class="icon-desktop" />
     <img src="../assets/icons_highlights/icon10.png" alt="Icone de Lâmpada" />
     <div class="divisor"></div>
-    <h1>Criações</h1>
+    <h1>Perfil</h1>
     <div class="divisor"></div>
     <img src="../assets/icons_highlights/icon11.png" alt="Icone de Livro" />
     <img src="../assets/icons_highlights/icon12.png" alt="Icone de Colmeia" class="icon-desktop" />
@@ -43,7 +43,7 @@ export default {
   height: 48px;
   flex-shrink: 0;
 }
-
+    
 .divisor {
   flex: 1;
   height: 1px;
