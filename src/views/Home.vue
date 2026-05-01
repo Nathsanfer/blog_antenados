@@ -13,276 +13,262 @@ export default {
 
 <template>
   <HeaderTemplate />
-  
-  <div class="banner">
-    <img src="../assets/banner.png" alt="Banner" />
-  </div>
 
-  <section class="categories">
-    <h1 class="title1">Explore por temas (Destaques)</h1>
-    <ul class="list-themes">
-      <li class="item-theme">
-        <div class="container-icon">
-          <img
-            src="../assets/icons_highlights/icon1.png"
-            alt="Icone para o tema 1"
-          />
-        </div>
-        <p class="name-theme">Artes e Expressão</p>
-      </li>
-      <li class="item-theme">
-        <div class="container-icon">
-          <img
-            src="../assets/icons_highlights/icon2.png"
-            alt="Icone para o tema 2"
-          />
-        </div>
-        <p class="name-theme">Folclore</p>
-      </li>
-      <li class="item-theme">
-        <div class="container-icon">
-          <img
-            src="../assets/icons_highlights/icon3.png"
-            alt="Icone para o tema 3"
-          />
-        </div>
-        <p class="name-theme">Consciência Negra</p>
-      </li>
-      <li class="item-theme">
-        <div class="container-icon">
-          <img
-            src="../assets/icons_highlights/icon4.png"
-            alt="Icone para o tema 4"
-          />
-        </div>
-        <p class="name-theme">Projetos Ciêntificos</p>
-      </li>
-    </ul>
-  </section>
-
-  <div class="decoration">
-    <img src="../assets/decoration.png" alt="" />
-    <img src="../assets/decoration.png" alt="" />
-  </div>
-
-  <section class="objectives">
-    <div class="section-header">
-      <div class="divisor"></div>
-      <h1 class="title2">Objetivos</h1>
-      <div class="divisor"></div>
+  <main class="page-content">
+    <div class="banner">
+      <img src="../assets/banner.png" alt="Banner" />
     </div>
-    <div class="container-topics">
-      <ul class="item-objective1">
-        <li class="item">
-          <div class="icon">
-            <img src="../assets/icons_highlights/icon2.png" alt="" />
+
+    <section class="categories">
+      <h1 class="title1">Explore por temas (Destaques)</h1>
+      <ul class="list-themes">
+        <li class="item-theme">
+          <div class="container-icon">
+            <img src="../assets/icons_highlights/icon1.png" alt="Icone para o tema 1" />
           </div>
-          <div class="topic-content1">
-            <h3 class="subtitle">Objetivo 1</h3>
-            <p class="description">
-              Em meio a cores, pincéis e muita criatividade, os alunos
-              transformaram um simples muro em uma verdadeira obra de arte. Mais
-              do que uma atividade...
-            </p>
-          </div>
+          <p class="name-theme">Artes e Expressão</p>
         </li>
-        <li class="item">
-          <div class="icon">
-            <img src="../assets/icons_highlights/icon2.png" alt="" />
+        <li class="item-theme">
+          <div class="container-icon">
+            <img src="../assets/icons_highlights/icon2.png" alt="Icone para o tema 2" />
           </div>
-          <div class="topic-content1">
-            <h3 class="subtitle">Objetivo 1</h3>
-            <p class="description">
-              Em meio a cores, pincéis e muita criatividade, os alunos
-              transformaram um simples muro em uma verdadeira obra de arte. Mais
-              do que uma atividade...
-            </p>
+          <p class="name-theme">Folclore</p>
+        </li>
+        <li class="item-theme">
+          <div class="container-icon">
+            <img src="../assets/icons_highlights/icon3.png" alt="Icone para o tema 3" />
           </div>
+          <p class="name-theme">Consciência Negra</p>
+        </li>
+        <li class="item-theme">
+          <div class="container-icon">
+            <img src="../assets/icons_highlights/icon4.png" alt="Icone para o tema 4" />
+          </div>
+          <p class="name-theme">Projetos Ciêntificos</p>
         </li>
       </ul>
-      <div class="container-divisor">
-        <div class="divisor-objective"></div>
-        <div class="images-divisor">
-          <img src="../assets/icons_highlights/icon5.png" alt="" />
-          <img
-            class="image-right"
-            src="../assets/icons_highlights/icon5.png"
-            alt=""
-          />
+    </section>
+
+    <div class="decoration">
+      <img src="../assets/decoration.png" alt="" />
+      <img src="../assets/decoration.png" alt="" />
+    </div>
+
+    <section class="objectives">
+      <div class="section-header">
+        <div class="divisor"></div>
+        <h1 class="title2">Objetivos</h1>
+        <div class="divisor"></div>
+      </div>
+      <div class="container-topics">
+        <ul class="item-objective1">
+          <li class="item">
+            <div class="icon">
+              <img src="../assets/icons_highlights/icon2.png" alt="" />
+            </div>
+            <div class="topic-content1">
+              <h3 class="subtitle">Objetivo 1</h3>
+              <p class="description">
+                Em meio a cores, pincéis e muita criatividade, os alunos
+                transformaram um simples muro em uma verdadeira obra de arte. Mais
+                do que uma atividade...
+              </p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="icon">
+              <img src="../assets/icons_highlights/icon2.png" alt="" />
+            </div>
+            <div class="topic-content1">
+              <h3 class="subtitle">Objetivo 1</h3>
+              <p class="description">
+                Em meio a cores, pincéis e muita criatividade, os alunos
+                transformaram um simples muro em uma verdadeira obra de arte. Mais
+                do que uma atividade...
+              </p>
+            </div>
+          </li>
+        </ul>
+        <div class="container-divisor">
+          <div class="divisor-objective"></div>
+          <div class="images-divisor">
+            <img src="../assets/icons_highlights/icon5.png" alt="" />
+            <img class="image-right" src="../assets/icons_highlights/icon5.png" alt="" />
+          </div>
+        </div>
+        <ul class="item-objective2">
+          <li class="item">
+            <div class="topic-content2">
+              <h3 class="subtitle">Objetivo 1</h3>
+              <p class="description">
+                Em meio a cores, pincéis e muita criatividade, os alunos
+                transformaram um simples muro em uma verdadeira obra de arte. Mais
+                do que uma atividade...
+              </p>
+            </div>
+            <div class="icon">
+              <img src="../assets/icons_highlights/icon2.png" alt="" />
+            </div>
+          </li>
+          <li class="item">
+            <div class="topic-content2">
+              <h3 class="subtitle">Objetivo 1</h3>
+              <p class="description">
+                Em meio a cores, pincéis e muita criatividade, os alunos
+                transformaram um simples muro em uma verdadeira obra de arte. Mais
+                do que uma atividade...
+              </p>
+            </div>
+            <div class="icon">
+              <img src="../assets/icons_highlights/icon2.png" alt="" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="insight">
+      <div class="icon-top-right">
+        <img src="../assets/icons_highlights/icon6.png" alt="Ícone superior direito" />
+      </div>
+      <div class="insight-content">
+        <h2 class="title3">Busca pelo Saber</h2>
+        <p class="word">
+          "Sem a cultura, e a liberdade relativa que ela pressupõe, a sociedade,
+          por mais perfeita que seja, não passa de uma selva. É por isso que toda
+          a criação autêntica é um dom para o futuro."
+        </p>
+        <div class="author">
+          <img src="../assets/author.png" alt="Imagem do autor da frase, Albert Camus" />
+          <div class="author-content">
+            <p class="name">Albert Camus</p>
+            <p class="text">Escritor e Filósofo</p>
+          </div>
         </div>
       </div>
-      <ul class="item-objective2">
-        <li class="item">
-          <div class="topic-content2">
-            <h3 class="subtitle">Objetivo 1</h3>
-            <p class="description">
-              Em meio a cores, pincéis e muita criatividade, os alunos
-              transformaram um simples muro em uma verdadeira obra de arte. Mais
-              do que uma atividade...
-            </p>
-          </div>
-          <div class="icon">
-            <img src="../assets/icons_highlights/icon2.png" alt="" />
-          </div>
-        </li>
-        <li class="item">
-          <div class="topic-content2">
-            <h3 class="subtitle">Objetivo 1</h3>
-            <p class="description">
-              Em meio a cores, pincéis e muita criatividade, os alunos
-              transformaram um simples muro em uma verdadeira obra de arte. Mais
-              do que uma atividade...
-            </p>
-          </div>
-          <div class="icon">
-            <img src="../assets/icons_highlights/icon2.png" alt="" />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+      <div class="icon-bottom-left">
+        <img src="../assets/icons_highlights/icon7.png" alt="Ícone inferior esquerdo" />
+      </div>
+    </section>
 
-  <section class="insight">
-    <div class="icon-top-right">
-      <img
-        src="../assets/icons_highlights/icon6.png"
-        alt="Ícone superior direito"
-      />
-    </div>
-    <div class="insight-content">
-      <h2 class="title3">Busca pelo Saber</h2>
-      <p class="word">
-        “Sem a cultura, e a liberdade relativa que ela pressupõe, a sociedade,
-        por mais perfeita que seja, não passa de uma selva. É por isso que toda
-        a criação autêntica é um dom para o futuro.”
-      </p>
-      <div class="author">
-        <img
-          src="../assets/author.png"
-          alt="Imagem do autor da frase, Albert Camus"
-        />
-        <div class="author-content">
-          <p class="name">Albert Camus</p>
-          <p class="text">Escritor e Filósofo</p>
+    <section class="recent-posts">
+      <div class="section-header">
+        <div class="divisor"></div>
+        <h1 class="title2">Postagens Recentes</h1>
+        <div class="divisor"></div>
+      </div>
+      <div class="posts">
+        <div class="card">
+          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
+          <p class="text-categorie">ARTES E EXPRESSÃO</p>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
+          <p class="brief-content">
+            Em meio a cores, pincéis e muita criatividade, os alunos transformaram
+            um simples muro em uma verdadeira obra de arte. Mais do que uma
+            atividade artística, o projeto representou a...
+            <strong>Ler Mais</strong>
+          </p>
+          <div class="divisor-post"></div>
+          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+        </div>
+        <div class="card">
+          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
+          <p class="text-categorie">ARTES E EXPRESSÃO</p>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
+          <p class="brief-content">
+            Em meio a cores, pincéis e muita criatividade, os alunos transformaram
+            um simples muro em uma verdadeira obra de arte. Mais do que uma
+            atividade artística, o projeto representou a...
+            <strong>Ler Mais</strong>
+          </p>
+          <div class="divisor-post"></div>
+          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+        </div>
+        <div class="card">
+          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
+          <p class="text-categorie">ARTES E EXPRESSÃO</p>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
+          <p class="brief-content">
+            Em meio a cores, pincéis e muita criatividade, os alunos transformaram
+            um simples muro em uma verdadeira obra de arte. Mais do que uma
+            atividade artística, o projeto representou a...
+            <strong>Ler Mais</strong>
+          </p>
+          <div class="divisor-post"></div>
+          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
         </div>
       </div>
-    </div>
-    <div class="icon-bottom-left">
-      <img
-        src="../assets/icons_highlights/icon7.png"
-        alt="Ícone inferior esquerdo"
-      />
-    </div>
-  </section>
-
-  <section class="recent-posts">
-    <div class="section-header">
-      <div class="divisor"></div>
-      <h1 class="title2">Postagens Recentes</h1>
-      <div class="divisor"></div>
-    </div>
-    <div class="posts">
-      <div class="card">
-        <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-        <p class="text-categorie">ARTES E EXPRESSÃO</p>
-        <h4 class="title-post">
-          Cada cor, uma marca: histórias pintadas na escola
-        </h4>
-        <p class="brief-content">
-          Em meio a cores, pincéis e muita criatividade, os alunos transformaram
-          um simples muro em uma verdadeira obra de arte. Mais do que uma
-          atividade artística, o projeto representou a...
-          <strong>Ler Mais</strong>
-        </p>
-        <div class="divisor-post"></div>
-        <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-      </div>
-      <div class="card">
-        <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-        <p class="text-categorie">ARTES E EXPRESSÃO</p>
-        <h4 class="title-post">
-          Cada cor, uma marca: histórias pintadas na escola
-        </h4>
-        <p class="brief-content">
-          Em meio a cores, pincéis e muita criatividade, os alunos transformaram
-          um simples muro em uma verdadeira obra de arte. Mais do que uma
-          atividade artística, o projeto representou a...
-          <strong>Ler Mais</strong>
-        </p>
-        <div class="divisor-post"></div>
-        <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-      </div>
-      <div class="card">
-        <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-        <p class="text-categorie">ARTES E EXPRESSÃO</p>
-        <h4 class="title-post">
-          Cada cor, uma marca: histórias pintadas na escola
-        </h4>
-        <p class="brief-content">
-          Em meio a cores, pincéis e muita criatividade, os alunos transformaram
-          um simples muro em uma verdadeira obra de arte. Mais do que uma
-          atividade artística, o projeto representou a...
-          <strong>Ler Mais</strong>
-        </p>
-        <div class="divisor-post"></div>
-        <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-      </div>
-    </div>
-    <router-link class="link-btn" to="#">
-      <button class="btn">Ver Mais</button>
-    </router-link>
-  </section>
+      <router-link class="link-btn" to="#">
+        <button class="btn">Ver Mais</button>
+      </router-link>
+    </section>
+  </main>
 
   <FooterTemplate />
 </template>
 
 <style scoped>
+/* ===== Base ===== */
+.page-content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ===== Banner ===== */
 .banner {
   width: 100%;
-  height: auto;
   margin-top: -1.2rem;
+  overflow: hidden;
 }
 
 .banner img {
   width: 100%;
-  height: 100%;
+  height: 420px;
   object-fit: cover;
+  display: block;
 }
 
+/* ===== Categories ===== */
 .categories {
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 3.5rem auto 0;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .title1 {
   font-size: 30px;
-  font-weight: 500  ;
+  font-weight: 500;
   font-family: var(--secondary-font);
-  margin-bottom: 20px;
-  width: 100%;
   max-width: 18rem;
+  line-height: 1.3;
 }
 
 .list-themes {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   list-style: none;
+  padding: 0;
+  margin: 0;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
 }
 
-.item {
+.item-theme {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.item-theme:hover {
+  transform: translateY(-4px);
 }
 
 .container-icon {
@@ -292,25 +278,21 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 0.2s ease;
 }
 
-.list-themes li:nth-child(1) .container-icon {
-  background-color: var(--pastel-pink);
+.item-theme:hover .container-icon {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
-.list-themes li:nth-child(2) .container-icon {
-  background-color: var(--pastel-green);
-}
-.list-themes li:nth-child(3) .container-icon {
-  background-color: var(--pastel-orange);
-}
-.list-themes li:nth-child(4) .container-icon {
-  background-color: var(--pastel-blue);
-}
+.list-themes li:nth-child(1) .container-icon { background-color: var(--pastel-pink); }
+.list-themes li:nth-child(2) .container-icon { background-color: var(--pastel-green); }
+.list-themes li:nth-child(3) .container-icon { background-color: var(--pastel-orange); }
+.list-themes li:nth-child(4) .container-icon { background-color: var(--pastel-blue); }
 
 .container-icon img {
-  width: 70%;
-  height: 70%;
+  width: 65%;
+  height: 65%;
   object-fit: contain;
 }
 
@@ -321,12 +303,13 @@ export default {
   font-family: var(--primary-font);
 }
 
+/* ===== Decoration ===== */
 .decoration {
-  width: 80%;
+  max-width: 1100px;
   height: 25px;
-  margin: 0 auto;
+  margin: 2.5rem auto 0;
+  padding: 0 2rem;
   display: flex;
-  margin-top: 2rem;
 }
 
 .decoration img {
@@ -335,15 +318,15 @@ export default {
   object-fit: cover;
 }
 
+/* ===== Objectives ===== */
 .objectives {
-  width: 80%;
-  height: auto;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 2.5rem;
 }
 
 .section-header {
@@ -351,11 +334,10 @@ export default {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  justify-content: center;
 }
 
 .divisor {
-  width: 100%;
+  flex: 1;
   height: 1px;
   background-color: #000;
 }
@@ -364,20 +346,14 @@ export default {
   font-size: 34px;
   font-weight: 500;
   font-family: var(--secondary-font);
-  white-space: nowrap; /* evita o titulo quebrar com a linha */
-}
-
-.recent-posts div:nth-child(1) .title2 {
-  width: 100%;
-  max-width: 870px;
-  text-align: center;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .container-topics {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -385,7 +361,7 @@ export default {
 .item-objective2 {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -395,99 +371,81 @@ export default {
 .item {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
-  min-height: 80px;
-  flex: 0 0 80px;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
-.item-objective1 li:nth-child(1) .icon {
-  background-color: var(--pastel-pink);
-}
-
-.item-objective1 li:nth-child(2) .icon {
-  background-color: var(--pastel-orange);
-}
-
-.item-objective2 li:nth-child(1) .icon {
-  background-color: var(--pastel-green);
-}
-
-.item-objective2 li:nth-child(2) .icon {
-  background-color: var(--pastel-blue);
-}
+.item-objective1 li:nth-child(1) .icon { background-color: var(--pastel-pink); }
+.item-objective1 li:nth-child(2) .icon { background-color: var(--pastel-orange); }
+.item-objective2 li:nth-child(1) .icon { background-color: var(--pastel-green); }
+.item-objective2 li:nth-child(2) .icon { background-color: var(--pastel-blue); }
 
 .icon img {
-  width: 70%;
-  height: 70%;
-  max-width: 90%;
-  max-height: 90%;
+  width: 65%;
+  height: 65%;
   object-fit: contain;
-  display: block;
 }
 
-.topic-content1 {
-  display: flex;
-  flex-direction: column;
-}
-
+.topic-content1,
 .topic-content2 {
   display: flex;
   flex-direction: column;
+  flex: 1;
+}
+
+.topic-content2 {
   text-align: end;
 }
 
 .subtitle {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: bold;
   font-family: var(--secondary-font);
+  margin: 0 0 0.3rem;
 }
 
 .description {
-  font-size: 12px;
+  font-size: 13px;
   font-family: var(--primary-font);
-  width: 300px;
-  margin-top: -0.6rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
 }
 
-.divisor-objective {
-  width: 1px;
-  height: 100%;
-  background-color: #000;
-  z-index: 1;
-}
-
+/* Central divider */
 .container-divisor {
   position: relative;
-  width: 90px;
+  width: 80px;
+  flex-shrink: 0;
   align-self: stretch;
 }
 
 .divisor-objective {
   position: absolute;
-  top: -12px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  height: calc(100% +30px);
+  height: 100%;
   background-image: repeating-linear-gradient(
     to bottom,
-    #000000 0,
-    #000000 14px,
+    #000 0,
+    #000 14px,
     transparent 14px,
     transparent 24px
   );
-  background-color: transparent;
   z-index: 0;
 }
 
@@ -500,181 +458,167 @@ export default {
   justify-content: center;
   gap: 6rem;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 0;
 }
 
 .images-divisor img {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  display: block;
   background: #fff;
   border-radius: 50%;
+  display: block;
 }
 
 .image-right {
   transform: rotate(250deg);
 }
 
+/* ===== Insight ===== */
 .insight {
   position: relative;
-  width: 80%;
-  min-height: 220px;
-  height: auto;
-  padding: 2rem 0;
-  margin: 0 auto;
-  margin-top: 6rem;
-  outline: 2px solid transparent;
+  max-width: 1000px;
+  width: calc(100% - 4rem);
+  margin: 6rem auto;
+  padding: 2.5rem 3rem;
+  border-radius: 30px;
   border: 2px solid transparent;
-  box-shadow: 0 0 0 2px transparent;
   background:
     linear-gradient(white, white) padding-box,
-    linear-gradient(to right, #aca16d, #6dac7e, #41d0da, #7e4ba0, #da4167)
-      border-box;
-  border-image-slice: 1;
-  border-radius: 30px;
+    linear-gradient(to right, #aca16d, #6dac7e, #41d0da, #7e4ba0, #da4167) border-box;
 }
 
 .icon-top-right {
   position: absolute;
-  top: -25px;
-  right: -25px;
-  width: 80px;
-  height: 80px;
+  top: -28px;
+  right: -28px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.icon-top-right img {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .icon-bottom-left {
   position: absolute;
-  bottom: -25px;
-  left: -25px;
-  width: 80px;
-  height: 80px;
+  bottom: -28px;
+  left: -28px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.icon-top-right img,
 .icon-bottom-left img {
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  height: 85%;
   object-fit: contain;
 }
 
 .insight-content {
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .title3 {
   font-size: 24px;
   font-weight: 500;
   font-family: var(--secondary-font);
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .word {
   font-size: 15px;
-  width: 90%;
   max-width: 700px;
   font-family: var(--primary-font);
   text-align: center;
   font-style: italic;
+  line-height: 1.75;
+  color: #333;
+  margin: 0;
 }
 
 .author {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .author img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .author-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .name {
   font-size: 13px;
   font-weight: 600;
   font-family: var(--primary-font);
-  padding: 0;
   margin: 0;
 }
 
 .text {
   font-size: 12px;
   font-family: var(--primary-font);
-  padding: 0;
   margin: 0;
+  color: #666;
 }
 
+/* ===== Recent Posts ===== */
 .recent-posts {
-  width: 80%;
-  height: auto;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 4rem auto 5rem;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  margin-top: 5rem;
 }
 
 .posts {
-  width: 85%;
-  display: flex;
-  flex-wrap: wrap;
-  
-  justify-content: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .card {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
 }
 
 .card img {
   width: 100%;
-  max-width: 380px;
-  height: 180px;
-  border-radius: 20px 20px 0 0;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
 
 .text-categorie {
@@ -682,82 +626,125 @@ export default {
   font-family: var(--primary-font);
   color: #da4167;
   margin: 0;
-  padding: 0.6rem 0.6rem 0rem 0.6rem;
+  padding: 0.75rem 0.75rem 0;
+  letter-spacing: 0.5px;
 }
 
 .title-post {
-  font-size: 21.4px;
+  font-size: 20px;
   font-weight: 500;
   font-family: var(--secondary-font);
   margin: 0;
-  padding: 0rem 0.6rem;
+  padding: 0.25rem 0.75rem 0;
+  line-height: 1.3;
 }
 
 .brief-content {
-  font-size: 10px;
+  font-size: 11px;
   font-family: var(--primary-font);
   margin: 0;
-  font-weight: 250;
-  padding: 0rem 0.6rem;
+  font-weight: 300;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.65;
+  color: #555;
+  flex: 1;
+}
+
+.brief-content strong {
+  color: var(--color-green);
+  font-weight: 600;
 }
 
 .divisor-post {
-  width: 95%;
+  width: 92%;
   height: 1px;
-  background-color: #cac9c959;
+  background-color: #ececec;
   margin: 0 auto;
 }
 
 .author-post {
   font-size: 11px;
   font-family: var(--primary-font);
-  color: #333333;
+  color: #333;
   margin: 0;
-  padding: 0 0.6rem 0.9rem 0.6rem;
+  padding: 0.5rem 0.75rem 1rem;
 }
 
 .author-post span {
   color: #da4167;
-  font-weight: 400;
+  font-weight: 500;
+}
+
+.link-btn {
+  text-decoration: none;
 }
 
 .btn {
-  padding: 8px 45px;
+  padding: 10px 52px;
   background-color: var(--color-green);
-  color: white;
+  color: #fff;
   border-radius: 20px;
-  border: navajowhite;
+  border: none;
   cursor: pointer;
-  margin-top: 2rem;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Tablet (768px) */
+.btn:hover {
+  background-color: #5a9a70;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(109, 172, 131, 0.4);
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+   ============================ */
+
+/* Tablet landscape / small desktop */
+@media (max-width: 1024px) {
+  .banner img {
+    height: 320px;
+  }
+
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .description {
+    font-size: 12px;
+  }
+}
+
+/* Tablet portrait */
 @media (max-width: 768px) {
+  .banner img {
+    height: 240px;
+  }
+
   .categories {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    text-align: center;
   }
 
   .title1 {
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
+    font-size: 26px;
+    max-width: 100%;
+  }
+
+  .title2 {
+    font-size: 26px;
   }
 
   .list-themes {
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-
-  .item-theme {
-    flex: 0 0 calc(50% - 1rem);
-    max-width: 150px;
+    gap: 2rem;
   }
 
   .container-topics {
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .container-divisor {
@@ -767,114 +754,85 @@ export default {
   .item-objective1,
   .item-objective2 {
     width: 100%;
-  }
-
-  .item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .item-object2 .item{
-    flex-direction: column-reverse;
-  }
-
-  .topic-content1,
-  .topic-content2 {
-    align-items: center;
-  }
-
-  .topic-content2 {
-    text-align: center;
-  }
-
-  .description {
-    width: 100%;
-  }
-
-  .title2 {
-    font-size: 28px;
-  }
-
-  .insight {
-    width: 90%;
-    height: auto;
-    padding: 2rem 1rem;
-  }
-
-  .word {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .author {
-    width: 100%;
-  }
-
-  .icon-top-right,
-  .icon-bottom-left {
-    width: 50px;
-    height: 50px;
-  }
-
-  .icon-top-right {
-    top: -15px;
-    right: -15px;
-  }
-
-  .icon-bottom-left {
-    bottom: -15px;
-    left: -15px;
-  }
-
-  .posts {
-    flex-direction: column;
-    align-items: center;
     gap: 2rem;
   }
 
-  .card {
-    width: 100%;
-    max-width: 350px;
+  /* Objective 2: reverse items so icon appears first */
+  .item-objective2 .item {
+    flex-direction: row-reverse;
   }
 
-  .card img {
-    width: 100%;
-    height: auto;
+  .topic-content2 {
+    text-align: left;
+  }
+
+  .insight {
+    width: calc(100% - 3rem);
+    padding: 2rem 1.75rem;
+    margin: 4.5rem auto;
+  }
+
+  .icon-top-right {
+    width: 56px;
+    height: 56px;
+    top: -20px;
+    right: -18px;
+  }
+
+  .icon-bottom-left {
+    width: 56px;
+    height: 56px;
+    bottom: -20px;
+    left: -18px;
+  }
+
+  .posts {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin: 0 auto;
   }
 }
 
-/* Mobile (480px) */
+/* Mobile */
 @media (max-width: 480px) {
-  .title1 {
-    font-size: 20px;
+  .banner img {
+    height: 190px;
   }
 
-  .item-theme {
-    flex: 0 0 100%;
-    max-width: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 2rem;
+  .categories {
+    padding: 0 1.25rem;
+  }
+
+  .title1 {
+    font-size: 22px;
+  }
+
+  .list-themes {
     gap: 1.5rem;
   }
 
-  .container-icon {
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
+  .objectives {
+    padding: 0 1.25rem;
+    gap: 2rem;
   }
 
-  .name-theme {
-    font-size: 16px;
-    width: auto;
-    text-align: left;
+  .recent-posts {
+    padding: 0 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .decoration {
+    padding: 0 1.25rem;
   }
 
   .title2 {
     font-size: 22px;
+  }
+
+  .icon {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
   }
 
   .subtitle {
@@ -882,11 +840,13 @@ export default {
   }
 
   .description {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .insight {
-    margin-top: 3rem;
+    width: calc(100% - 2.5rem);
+    padding: 1.75rem 1.25rem;
+    margin: 3.5rem auto;
   }
 
   .title3 {
@@ -897,22 +857,23 @@ export default {
     font-size: 13px;
   }
 
-  .author {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .icon-top-right,
+  .icon-bottom-left {
+    width: 48px;
+    height: 48px;
   }
 
-  .author img {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
+  .icon-top-right {
+    top: -16px;
+    right: -14px;
   }
 
-  .recent-posts {
-    width: 90%;
+  .icon-bottom-left {
+    bottom: -16px;
+    left: -14px;
   }
 
-  .card {
+  .posts {
     max-width: 100%;
   }
 
@@ -921,8 +882,55 @@ export default {
   }
 
   .btn {
-    padding: 10px 30px;
+    padding: 10px 40px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .banner img {
+    height: 155px;
+  }
+
+  .title1 {
+    font-size: 20px;
+  }
+
+  .item-theme {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    max-width: none;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+  }
+
+  .name-theme {
+    width: auto;
+    text-align: left;
     font-size: 14px;
+  }
+
+  .container-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .list-themes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .title2 {
+    font-size: 20px;
+  }
+
+  .item-objective1,
+  .item-objective2 {
+    gap: 1.5rem;
   }
 }
 </style>
