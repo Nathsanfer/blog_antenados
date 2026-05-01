@@ -231,7 +231,7 @@ main {
   display: flex;
   width: 85%;
   margin: 0 auto;
-  justify-content: space-between; 
+  justify-content: space-between;       
   flex-direction: row;
   margin-top: 2rem;
 }
