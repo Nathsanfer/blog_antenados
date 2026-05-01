@@ -12,23 +12,25 @@ export default {
 
 <template>
   <HeaderTemplate />
+
   <div class="header-page">
-    <img src="../assets/icons_highlights/icon9.png" alt="Icone de Beca" />
+    <img src="../assets/icons_highlights/icon9.png" alt="Icone de Beca" class="icon-desktop" />
     <img src="../assets/icons_highlights/icon10.png" alt="Icone de Lâmpada" />
     <div class="divisor"></div>
     <h1>Blog</h1>
     <div class="divisor"></div>
     <img src="../assets/icons_highlights/icon11.png" alt="Icone de Livro" />
-    <img src="../assets/icons_highlights/icon12.png" alt="Icone de Colmeia" />
+    <img src="../assets/icons_highlights/icon12.png" alt="Icone de Colmeia" class="icon-desktop" />
   </div>
 
   <main>
-    <div class="container-left">
+    <aside class="container-left">
       <div class="search-bar">
         <p>Realize suas buscas...</p>
-        <img src="../assets/icons_highlights/icon13.png" alt="" />
+        <img src="../assets/icons_highlights/icon13.png" alt="Buscar" />
       </div>
-      <h3 class="title-categorie">Categorias</h3>
+
+      <h3 class="title-sidebar">Categorias</h3>
       <div class="categories">
         <div class="category">
           <p>Projetos Ciêntificos</p>
@@ -43,7 +45,8 @@ export default {
           <p>Artes e Expressão</p>
         </div>
       </div>
-      <h3 class="title-jornal">Jornais</h3>
+
+      <h3 class="title-sidebar">Jornais</h3>
       <div class="jornals">
         <div class="jornal">
           <p>1º Edição do Jornal</p>
@@ -55,16 +58,14 @@ export default {
           <p>3º Edição do Jornal</p>
         </div>
       </div>
-    </div>
+    </aside>
 
     <div class="container-right">
       <div class="posts-grid">
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -77,9 +78,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -92,9 +91,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -107,9 +104,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -122,9 +117,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -137,9 +130,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -152,9 +143,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -167,9 +156,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -182,9 +169,7 @@ export default {
         <div class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
           <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">
-            Cada cor, uma marca: histórias pintadas na escola
-          </h4>
+          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
           <p class="brief-content">
             Em meio a cores, pincéis e muita criatividade, os alunos
             transformaram um simples muro em uma verdadeira obra de arte. Mais
@@ -197,26 +182,30 @@ export default {
       </div>
     </div>
   </main>
+
   <FooterTemplate />
 </template>
 
 <style scoped>
+/* ===== Header Page ===== */
 .header-page {
   display: flex;
+  max-width: 1200px;
   width: 90%;
-  margin: 0 auto;
+  margin: 1rem auto;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
 
 .header-page img {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 .divisor {
-  width: 100%;
+  flex: 1;
   height: 1px;
   background-color: #a8a8a8;
 }
@@ -225,20 +214,27 @@ export default {
   font-size: 30px;
   font-weight: 500;
   font-family: var(--secondary-font);
+  white-space: nowrap;
 }
 
+/* ===== Main Layout ===== */
 main {
   display: flex;
   width: 85%;
   margin: 0 auto;
   justify-content: space-between;       
   flex-direction: row;
-  margin-top: 2rem;
+  max-width: 1200px;
+  width: 90%;
+  margin: 2rem auto 4rem;
+  gap: 2rem;
+  overflow-x: hidden;
 }
 
+/* ===== Sidebar ===== */
 .container-left {
-  width: 22%;
-  height: auto;
+  width: 240px;
+  flex-shrink: 0;
 }
 
 .search-bar {
@@ -246,10 +242,15 @@ main {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  cursor: text;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-bar:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
 }
 
 .search-bar p {
@@ -264,17 +265,18 @@ main {
   width: 20px;
   height: 20px;
   margin: 0.5rem;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
-.title-categorie {
+.title-sidebar {
   font-size: 19px;
   font-weight: 500;
   font-family: var(--secondary-font);
-  color: #000000;
-  margin: 1.5rem 0.5rem 0.5rem 0.3rem;
+  color: #000;
+  margin: 1.5rem 0 0.5rem;
 }
 
+/* Categories */
 .categories {
   display: flex;
   flex-direction: column;
@@ -285,32 +287,33 @@ main {
   width: 100%;
   height: 45px;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
     url("../assets/image1.png");
   background-size: cover;
-  border-radius: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
 }
 
 .category p {
   font-size: 12px;
   font-family: var(--primary-font);
-  color: #ffffff;
+  color: #fff;
   margin: 0;
-  padding: 0.7rem;
+  padding: 0 0.75rem;
+  text-align: center;
 }
 
-.title-jornal {
-  font-size: 19px;
-  font-weight: 500;
-  font-family: var(--secondary-font);
-  color: #000000;
-  margin: 1.5rem 0.5rem 0.5rem 0.3rem;
-}
-
+/* Journals */
 .jornals {
   display: flex;
   flex-direction: column;
@@ -321,50 +324,63 @@ main {
   width: 100%;
   height: 45px;
   background-color: #fff;
-  background-size: cover;
-  border-radius: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jornal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
 }
 
 .jornal p {
   font-size: 12px;
   font-family: var(--primary-font);
-  color: #333333;
+  color: #333;
   margin: 0;
-  padding: 0.7rem;
+  padding: 0 0.75rem;
 }
 
+/* ===== Posts Grid ===== */
 .container-right {
-  width: 76%;
-  height: auto;
+  flex: 1;
+  min-width: 0;
 }
 
 .posts-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .card {
-  width: 300px;
-  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
+  z-index: 2;
 }
 
 .card img {
-  width: 300px;
+  width: 100%;
   height: 180px;
-  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  display: block;
 }
 
 .text-categorie {
@@ -372,42 +388,181 @@ main {
   font-family: var(--primary-font);
   color: #da4167;
   margin: 0;
-  padding: 0.6rem 0.6rem 0rem 0.6rem;
+  padding: 0.75rem 0.75rem 0;
+  letter-spacing: 0.5px;
 }
 
 .title-post {
-  font-size: 21.4px;
+  font-size: 19px;
   font-weight: 500;
   font-family: var(--secondary-font);
   margin: 0;
-  padding: 0rem 0.6rem;
+  padding: 0.2rem 0.75rem 0;
+  line-height: 1.3;
 }
 
 .brief-content {
-  font-size: 10px;
+  font-size: 11px;
   font-family: var(--primary-font);
   margin: 0;
-  font-weight: 250;
-  padding: 0rem 0.6rem;
+  font-weight: 300;
+  padding: 0.4rem 0.75rem;
+  line-height: 1.6;
+  color: #555;
+  flex: 1;
+}
+
+.brief-content strong {
+  color: var(--color-green);
+  font-weight: 600;
 }
 
 .divisor-post {
-  width: 95%;
+  width: 92%;
   height: 1px;
-  background-color: #cac9c959;
+  background-color: #ececec;
   margin: 0 auto;
 }
 
 .author-post {
   font-size: 11px;
   font-family: var(--primary-font);
-  color: #333333;
+  color: #333;
   margin: 0;
-  padding: 0 0.6rem 0.9rem 0.6rem;
+  padding: 0.5rem 0.75rem 1rem;
 }
 
 .author-post span {
   color: #da4167;
-  font-weight: 400;
+  font-weight: 500;
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+   ============================ */
+
+/* Small desktop / tablet landscape */
+@media (max-width: 1100px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .container-left {
+    width: 100%;
+  }
+
+  /* Search bar full width */
+  .search-bar {
+    max-width: 100%;
+  }
+
+  /* Categories and journals become horizontal scroll rows */
+  .categories,
+  .jornals {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.6rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .categories::-webkit-scrollbar,
+  .jornals::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category,
+  .jornal {
+    flex-shrink: 0;
+    width: auto;
+    height: 40px;
+    padding: 0 1rem;
+    border-radius: 20px;
+  }
+
+  .category p,
+  .jornal p {
+    white-space: nowrap;
+    padding: 0;
+  }
+
+  .title-sidebar {
+    margin: 1rem 0 0.4rem;
+  }
+
+  /* Posts: 2 columns on tablet */
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Header page: hide outer icons */
+  .icon-desktop {
+    display: none;
+  }
+
+  .header-page img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-page h1 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .header-page {
+    gap: 0.6rem;
+  }
+
+  .header-page img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-page h1 {
+    font-size: 22px;
+  }
+
+  main {
+    width: 92%;
+    margin-bottom: 3rem;
+  }
+
+  /* Posts: 1 column on mobile */
+  .posts-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .title-post {
+    font-size: 18px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .header-page h1 {
+    font-size: 20px;
+  }
+
+  .posts-grid {
+    max-width: 100%;
+  }
 }
 </style>
