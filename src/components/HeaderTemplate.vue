@@ -9,6 +9,7 @@
       <router-link to="/" class="nav-link">Home</router-link>
       <router-link to="/blog" class="nav-link">Blog</router-link>
       <router-link to="/criacao" class="nav-link">Criações</router-link>
+      <router-link to="/perfil" class="nav-link">Perfil</router-link>
     </nav>
 
     <router-link class="link" to="/login"
