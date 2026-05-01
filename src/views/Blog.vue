@@ -220,6 +220,9 @@ export default {
 /* ===== Main Layout ===== */
 main {
   display: flex;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: space-between;       
   flex-direction: row;
   max-width: 1200px;
   width: 90%;
