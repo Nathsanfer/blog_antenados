@@ -103,64 +103,70 @@ const login = async () => {
       </div>
       <div class="icon-top-right">
         <img src="../assets/icons_highlights/icon7.png" alt="" />
-      </div>
-    </div>
-    <img class="image-right" src="../assets/image2.png" alt="" />
   </div>
+    </div>
 </template>
 
 <style scoped>
+
 .page {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .container {
-  background-color: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  width: 35%;
-  height: 550px;
-  position: relative;
-  z-index: 1;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 35%;
+    max-width: 100%;
+    min-height: 520px;
+    max-height: 90vh;
+    height: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .image-left {
-  position: absolute;
-  top: 0;
-  left: -5rem;
-  width: 530px;
-  height: 320px;
-  object-fit: contain;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: -5rem;
+    width: 530px;
+    height: 320px;
+    object-fit: contain;
 }
 
 .image-right {
-  position: absolute;
-  right: -5rem;
-  bottom: 0;
-  width: 530px;
-  height: 320px;
-  object-fit: contain;
+    margin: 0;
+    position: absolute;
+    right: -5rem;
+    bottom: 0;
+    width: 530px;
+    height: 320px;
+    object-fit: contain;
 }
 
 .icon-bottom-left {
-  position: absolute;
-  bottom: -2rem;
-  left: -2rem;
-  z-index: 2;
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    z-index: 2;
 }
 
 .icon-bottom-left img {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-  opacity: 0.15;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    opacity: 0.15;
 }
 
 .content {
@@ -229,16 +235,82 @@ const login = async () => {
 }
 
 .icon-top-right {
-  position: absolute;
-  top: -2rem;
-  right: -2rem;
-  z-index: 2;
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    z-index: 2;
 }
 
 .icon-top-right img {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-  opacity: 0.15;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    opacity: 0.15;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        max-width: 50%;
+        width: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        max-width: 45%;
+        width: 100%;
+    }
+
+    .content h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:480px) {
+    .container {
+        max-width: 82%;
+        width: 100%;
+        min-height: 450px;
+    }
+
+    .content h1 {
+        font-size: 18px;
+    }
+
+    .form {
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    .btn {
+        width: 60%;
+        margin-top: 0rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        max-width: 85%;
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .content h1 {
+        margin-top: 2rem;
+    }
+
+    .form {
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    .form-section label {
+        font-size: 12px;
+    }
+
+    .btn {
+        width: 60%;
+        margin-top: 0rem;
+    }
 }
 </style>
