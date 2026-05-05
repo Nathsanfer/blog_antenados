@@ -1,13 +1,157 @@
-<script>
+<script setup>
+import { computed, ref } from "vue";
 import FooterTemplate from "../components/FooterTemplate.vue";
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 
-export default {
-  name: "Criações",
-  components: {
-    HeaderTemplate,
-    FooterTemplate,
+const activeSection = ref("artigos");
+const activeStatusFilter = ref("todos");
+
+const statusLabels = {
+  rascunho: "Rascunho",
+  publicado: "Publicado",
+  arquivado: "Arquivado",
+};
+
+const statusFilters = [
+  { label: "Todos", value: "todos" },
+  { label: "Rascunho", value: "rascunho" },
+  { label: "Publicado", value: "publicado" },
+  { label: "Arquivado", value: "arquivado" },
+];
+
+const sections = {
+  artigos: {
+    label: "Artigos",
+    actionLabel: "Criar Artigo",
+    items: [
+      {
+        category: "ARTES E EXPRESSÃO",
+        status: "publicado",
+        title: "Cada cor, uma marca: histórias pintadas na escola",
+        excerpt:
+          "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+        author: "@ Aaaaaaa Aaaaa",
+      },
+      {
+        category: "CIÊNCIAS",
+        status: "rascunho",
+        title: "Experimentos simples que despertam a curiosidade",
+        excerpt:
+          "Atividades práticas ajudaram os estudantes a entender conceitos científicos de forma leve, visual e participativa dentro da sala de aula.",
+        author: "@ Bbbbbbb Bbbbb",
+      },
+      {
+        category: "FOLCLORE",
+        status: "arquivado",
+        title: "Lendas e histórias que mantêm a memória viva",
+        excerpt:
+          "Os alunos pesquisaram personagens do folclore brasileiro e criaram registros cheios de identidade cultural e criatividade.",
+        author: "@ Ccccccc Ccccc",
+      },
+      {
+        category: "CONSCIÊNCIA NEGRA",
+        status: "publicado",
+        title: "Projetos que valorizam a história e a representatividade",
+        excerpt:
+          "A turma desenvolveu produções que destacam a importância da luta, da cultura e da valorização da população negra.",
+        author: "@ Ddddddd Ddddd",
+      },
+      {
+        category: "LEITURA",
+        status: "rascunho",
+        title: "A biblioteca como espaço de descoberta",
+        excerpt:
+          "Entre livros, rodas de conversa e resenhas, os estudantes exploraram novas histórias e fortaleceram o hábito da leitura.",
+        author: "@ Eeeeeee Eeeee",
+      },
+      {
+        category: "TECNOLOGIA",
+        status: "arquivado",
+        title: "Ferramentas digitais no aprendizado escolar",
+        excerpt:
+          "Os recursos digitais ampliaram as formas de criar, pesquisar e apresentar trabalhos em diferentes disciplinas.",
+        author: "@ Fffffff Fffff",
+      },
+    ],
   },
+  jornais: {
+    label: "Jornais",
+    actionLabel: "Criar Jornal",
+    items: [
+      {
+        category: "1ª EDIÇÃO",
+        status: "publicado",
+        title: "Jornal escolar destaca os projetos do bimestre",
+        excerpt:
+          "A primeira edição reuniu reportagens sobre atividades, eventos e acontecimentos marcantes da escola.",
+        author: "@ Equipe Editorial",
+      },
+      {
+        category: "2ª EDIÇÃO",
+        status: "rascunho",
+        title: "Cobertura especial das ações culturais",
+        excerpt:
+          "Nesta edição, os alunos organizaram entrevistas, notas e fotos sobre as apresentações culturais realizadas no período.",
+        author: "@ Equipe Editorial",
+      },
+      {
+        category: "3ª EDIÇÃO",
+        status: "arquivado",
+        title: "Edição com foco em ciência e descobertas",
+        excerpt:
+          "Os estudantes produziram matérias sobre feiras, experimentos e experiências desenvolvidas em sala.",
+        author: "@ Equipe Editorial",
+      },
+      {
+        category: "4ª EDIÇÃO",
+        status: "publicado",
+        title: "Boletim da comunidade escolar",
+        excerpt:
+          "Uma edição especial com relatos das turmas, avisos e destaques da participação dos alunos.",
+        author: "@ Equipe Editorial",
+      },
+      {
+        category: "5ª EDIÇÃO",
+        status: "rascunho",
+        title: "Jornal de encerramento do semestre",
+        excerpt:
+          "A turma fechou o semestre com uma edição cheia de memórias, entrevistas e registros das melhores produções.",
+        author: "@ Equipe Editorial",
+      },
+      {
+        category: "6ª EDIÇÃO",
+        status: "arquivado",
+        title: "Especial com dicas e curiosidades",
+        excerpt:
+          "Conteúdos variados ajudaram a tornar o jornal mais dinâmico e atrativo para leitura da comunidade escolar.",
+        author: "@ Equipe Editorial",
+      },
+    ],
+  },
+};
+
+const currentSection = computed(() => sections[activeSection.value]);
+
+const filteredItems = computed(() => {
+  if (activeStatusFilter.value === "todos") {
+    return currentSection.value.items;
+  }
+
+  return currentSection.value.items.filter(
+    (item) => item.status === activeStatusFilter.value,
+  );
+});
+
+const totalItemsLabel = computed(
+  () => `Total de ${currentSection.value.label}: ${filteredItems.value.length}`,
+);
+
+const setSection = (section) => {
+  activeSection.value = section;
+};
+
+const setStatusFilter = (status) => {
+  activeStatusFilter.value = status;
 };
 </script>
 
@@ -34,136 +178,55 @@ export default {
 
   <main>
     <aside class="container-left">
-      <div class="option">
+      <button
+        class="option"
+        :class="{ active: activeSection === 'artigos' }"
+        type="button"
+        @click="setSection('artigos')"
+      >
         <h3>Artigos</h3>
-      </div>
-      <div class="option">
+      </button>
+      <button
+        class="option"
+        :class="{ active: activeSection === 'jornais' }"
+        type="button"
+        @click="setSection('jornais')"
+      >
         <h3>Jornais</h3>
-      </div>
+      </button>
     </aside>
 
     <div class="container-right">
       <div class="total-items">
-        <p>Total de Artigos: 20</p>
-        <button>Criar Artigo</button>
+        <p>{{ totalItemsLabel }}</p>
+        <button>{{ currentSection.actionLabel }}</button>
+      </div>
+      <div class="status-filters">
+        <button
+          v-for="filter in statusFilters"
+          :key="filter.value"
+          class="status-filter"
+          :class="{ active: activeStatusFilter === filter.value }"
+          type="button"
+          @click="setStatusFilter(filter.value)"
+        >
+          {{ filter.label }}
+        </button>
       </div>
       <div class="posts-grid">
-        <div class="card">
+        <div v-for="item in filteredItems" :key="item.title" class="card">
           <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
+          <span class="status-badge" :class="`status-${item.status}`">
+            {{ statusLabels[item.status] }}
+          </span>
+          <p class="text-categorie">{{ item.category }}</p>
+          <h4 class="title-post">{{ item.title }}</h4>
           <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
+            {{ item.excerpt }}
             <strong>Ler Mais</strong>
           </p>
           <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+          <p class="author-post">por <span>{{ item.author }}</span></p>
         </div>
       </div>
     </div>
@@ -221,18 +284,25 @@ main {
 }
 
 .option {
-  background-color: #ffffff;
   width: 100%;
-  border: 1px solid transparent;
-  background:
-    linear-gradient(white, white) padding-box,
-    linear-gradient(to right, #aca16d, #6dac7e, #41d0da, #7e4ba0, #da4167)
-      border-box;
+  border: 1px solid #aaaaaa;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
   border-radius: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.option.active {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #aca16d, #6dac7e, #41d0da, #7e4ba0, #da4167)
+      border-box;
 }
 
 .option h3 {
@@ -241,6 +311,15 @@ main {
   font-family: var(--secondary-font);
   margin: 0;
   padding: 1rem 0;
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 3px;
+}
+
+.option h3 {
+  pointer-events: none;
 }
 
 .container-right {
@@ -274,6 +353,30 @@ main {
   cursor: pointer;
 }
 
+.status-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.status-filter {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #d8d8d8;
+  background-color: #ffffff;
+  color: #555;
+  font-family: var(--primary-font);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.status-filter.active {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+  color: #fff;
+}
+
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -290,6 +393,33 @@ main {
   cursor: pointer;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.status-badge {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 3;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 11px;
+  font-family: var(--primary-font);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.status-rascunho {
+  background-color: #da9a16;
+}
+
+.status-publicado {
+  background-color: #6dac7e;
+}
+
+.status-arquivado {
+  background-color: #8d8d8d;
 }
 
 .card:hover {
