@@ -1,31 +1,74 @@
 <script>
+import { supabase } from "../composables/useSupabase.js";
 import { useRoute } from "vue-router";
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 import FooterTemplate from "../components/FooterTemplate.vue";
-import imagemPost from "../assets/post.jpg";
 
 export default {
-  name: "Home",
+  name: "BlogDetalhe",
   components: {
     HeaderTemplate,
     FooterTemplate,
   },
   data() {
     return {
-      content: `Entre cores, pincéis e muita criatividade, os alunos participaram de uma atividade especial que transformou a fachada da escola em uma verdadeira obra de arte. O que antes era apenas um muro passou a ganhar vida com desenhos, formas e cores que representam ideias, sentimentos e a imaginação de cada estudante. Mais do que uma simples pintura, essa iniciativa se tornou uma oportunidade para que os alunos deixassem sua marca no espaço onde aprendem, convivem e constroem suas histórias todos os dias.
-
-Durante a atividade, cada participante contribuiu com um pouco de sua criatividade, mostrando que a arte também pode ser uma forma de expressão e de aprendizado. Enquanto pintavam, os alunos não apenas desenvolveram habilidades artísticas, mas também trabalharam valores importantes, como colaboração, respeito e cuidado com o ambiente escolar. A experiência permitiu que todos se sentissem parte de algo maior, fortalecendo o sentimento de pertencimento e de orgulho pela escola.
-
-Projetos como esse mostram que a educação vai muito além da sala de aula. Quando os estudantes têm a oportunidade de participar ativamente da construção e transformação do espaço escolar, eles passam a enxergar a escola de uma maneira diferente: como um lugar que também é deles. Cada cor aplicada no muro representa dedicação, alegria e o desejo de tornar o ambiente mais bonito e acolhedor para todos.
-
-Além de revitalizar a fachada, a atividade também deixou uma mensagem importante para toda a comunidade escolar. A arte tem o poder de unir pessoas, despertar emoções e transformar lugares. Ao final do projeto, o resultado foi muito mais do que uma parede colorida — foi a construção de memórias, experiências e aprendizados que certamente permanecerão na lembrança de todos que participaram.
-
-Assim, cada pincelada feita pelos alunos simboliza mais do que tinta sobre o muro. Ela representa criatividade, união e o desejo de deixar uma marca positiva na escola. Uma marca que vai além das cores e que continuará inspirando outras gerações de estudantes a cuidar, valorizar e transformar o espaço onde estudam.`,
+      article: null,
     };
+  },
+  async mounted() {
+    const route = useRoute();
+    const postId = route.params.id;
+
+    if (!postId) {
+      console.warn("ID do artigo não fornecido");
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from("post_articles")
+        .select("*")
+        .eq("id", postId)
+        .limit(1);
+
+        if (error) {
+          console.error("Erro ao buscar os dados do artigo:", error);
+          return;
+        }
+
+        const a = (data || [])[0];
+        if (a) {
+          this.article = {
+            image: a.cover_image_url || "../assets/post.jpg",
+            category: a.category_name || "",
+            categoryColor: a.category_color || "#da4167",
+            title: a.title || "",
+            subtitle: a.subtitle || "",
+            content: a.content || "",
+            author: a.author_name || "",
+            authorPosition: a.author_position || "",
+            authorImage: a.author_avatar || "../assets/author.png",  
+            publishedAt: a.published_at || a.created_at || "",
+            id: a.id,
+          };
+        }
+    } catch (e) {
+      console.error("Erro ao buscar os dados do artigo:", e);
+    } 
   },
   methods: {
     formatContent(text) {
+      if (!text) return '';
       return text.replace(/\n/g, '<br>');
+    },
+    formatDate(dateString) {
+      if (!dateString) return '';
+      const date = new Date(dateString);
+      return date.toLocaleDateString('pt-BR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
     },
   },
 };
@@ -53,18 +96,18 @@ Assim, cada pincelada feita pelos alunos simboliza mais do que tinta sobre o mur
   </div>
 
   <main>
-    <aside class="container-left">
+    <aside class="container-left" v-if="article">
       <h3 class="title-sidebar title-primary">Autor(a)</h3>
       <div class="author">
-        <img src="../assets/author.png" alt="" />
+        <img :src="article.authorImage" :alt="article.author" />
         <div class="data-author">
-          <h4>Nathalia Santos</h4>
-          <p>Coordenadora</p>
+          <h4>{{ article.author }}</h4>
+          <p>{{ article.authorPosition }}</p>
         </div>
       </div>
       <h3 class="title-sidebar">Data da Publicação</h3>
       <div class="date">
-        <p>15 de junho de 2023</p>
+        <p>{{ formatDate(article.publishedAt) }}</p>
       </div>
       <h3 class="title-sidebar">Encontre Mais...</h3>
       <ul class="list-cards">
@@ -106,21 +149,18 @@ Assim, cada pincelada feita pelos alunos simboliza mais do que tinta sobre o mur
       </ul>
       <button class="btn-sidebar">Ver Mais</button>
     </aside>
-    <div class="container-right">
+    <div class="container-right" v-if="article">
       <div class="container">
-        <img src="../assets/post.jpg" alt="" />
-        <p class="category">ARTES E EXPRESSÃO</p>
+        <img :src="article.image" :alt="article.title" />
+        <p class="category" :style="{ color: article.categoryColor }">{{ article.category }}</p>
         <h1 class="title-article">
-          Cores que Falam: Como a Arte Expressa Emoções
+          {{ article.title }}
         </h1>
         <p class="subtitle">
-          Entre cores e criatividade, os alunos transformaram a fachada da
-          escola em uma verdadeira obra de arte. Mais do que pintar, eles
-          tiveram a oportunidade de deixar sua marca no espaço onde vivem e
-          aprendem, tornando o ambiente mais acolhedor e cheio de significado.
+          {{ article.subtitle }}
         </p>
         <div class="divider"></div>
-        <p class="content" v-html="formatContent(content)"></p>
+        <p class="content" v-html="formatContent(article.content)"></p>
       </div>
     </div>
   </main>
@@ -209,6 +249,7 @@ main {
   height: 50px;
   border-radius: 50%;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
 .data-author {

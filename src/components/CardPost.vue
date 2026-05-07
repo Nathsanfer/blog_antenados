@@ -1,7 +1,13 @@
 <script>
+import { useRouter } from "vue-router";
+
 export default {
   name: "CardPost",
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     image: {
       type: String,
       default: "",
@@ -27,31 +33,46 @@ export default {
       default: "",
     },
   },
+  setup() {
+    const router = useRouter();
+    return { router };
+  },
+  methods: {
+    goToArticle() {
+      this.router.push(`/blog/${this.id}`);
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="goToArticle()">
     <img :src="image" :alt="title" />
-    <p class="text-categorie" :style="{ color: categoryColor }">{{ category }}</p>
+    <p class="text-categorie" :style="{ color: categoryColor }">
+      {{ category }}
+    </p>
     <h4 class="title-post">{{ title }}</h4>
     <p class="brief-content">
       {{ content }}
     </p>
     <div class="divisor-post"></div>
-    <p class="author-post">por <span>@ {{ author }}</span></p>
+    <p class="author-post">
+      por <span>@ {{ author }}</span>
+    </p>
   </div>
 </template>
 
 <style>
-    .card {
+.card {
   display: flex;
   flex-direction: column;
   background: #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   cursor: pointer;
 }
 
