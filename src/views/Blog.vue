@@ -1,12 +1,97 @@
 <script>
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 import FooterTemplate from "../components/FooterTemplate.vue";
+import imagemPost from "../assets/post.jpg";
+
 export default {
   name: "Blog",
   components: {
     HeaderTemplate,
     FooterTemplate,
   },
+  data() {
+    return {
+      posts: [
+        {
+          id: 1,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 2,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 3,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 4,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 5,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 6,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 7,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 8,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        },
+        {
+          id: 9,
+          imagem: imagemPost,
+          categoria: "ARTES E EXPRESSÃO",
+          titulo: "Cada cor, uma marca: histórias pintadas na escola",
+          resumo: "Em meio a cores, pincéis e muita criatividade, os alunos transformaram um simples muro em uma verdadeira obra de arte. Mais do que uma atividade artística, o projeto representou a...",
+          autor: "@ Aaaaaaa Aaaaa"
+        }
+      ]
+    };
+  },
+  methods: {
+    irParaDetalhe(postId) {
+      this.$router.push(`/blog/${postId}`);
+    }
+  }
 };
 </script>
 
@@ -62,122 +147,21 @@ export default {
 
     <div class="container-right">
       <div class="posts-grid">
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
+        <div 
+          v-for="post in posts" 
+          :key="post.id"
+          class="card"
+          @click="irParaDetalhe(post.id)"
+        >
+          <img :src="post.imagem" :alt="post.titulo" />
+          <p class="text-categorie">{{ post.categoria }}</p>
+          <h4 class="title-post">{{ post.titulo }}</h4>
           <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
+            {{ post.resumo }}
             <strong>Ler Mais</strong>
           </p>
           <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos
-            transformaram um simples muro em uma verdadeira obra de arte. Mais
-            do que uma atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
+          <p class="author-post">por <span>{{ post.autor }}</span></p>
         </div>
       </div>
     </div>
