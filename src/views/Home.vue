@@ -1,12 +1,47 @@
 <script>
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 import FooterTemplate from "../components/FooterTemplate.vue";
+import CardPost from "../components/CardPost.vue";
+import { supabase } from "../composables/useSupabase.js";
 
 export default {
   name: "Home",
   components: {
     HeaderTemplate,
     FooterTemplate,
+    CardPost,
+  },
+  data() {
+    return {
+      posts: [],
+    };
+  },
+  async mounted() {
+    try {
+      const { data, error } = await supabase
+        .from("post_cards")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(3);
+
+      if (error) {
+        console.error("Erro ao buscar posts:", error);
+        return;
+      }
+
+      // Map the view fields to the CardPost props
+      this.posts = (data || []).map((p) => ({   
+        image: p.cover_image_url || "../assets/post.jpg",
+        category: p.category_name || "",
+        categoryColor: p.category_color || "#da4167",
+        title: p.title || "",
+        content: p.subtitle || "",
+        author: p.author_name || "",
+        id: p.id,
+      }));
+    } catch (e) {
+      console.error("Erro ao buscar posts:", e);
+    }
   },
 };
 </script>
@@ -158,45 +193,16 @@ export default {
         <div class="divisor"></div>
       </div>
       <div class="posts">
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos transformaram
-            um simples muro em uma verdadeira obra de arte. Mais do que uma
-            atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos transformaram
-            um simples muro em uma verdadeira obra de arte. Mais do que uma
-            atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
-        <div class="card">
-          <img src="../assets/post.jpg" alt="Imagem para a postagem" />
-          <p class="text-categorie">ARTES E EXPRESSÃO</p>
-          <h4 class="title-post">Cada cor, uma marca: histórias pintadas na escola</h4>
-          <p class="brief-content">
-            Em meio a cores, pincéis e muita criatividade, os alunos transformaram
-            um simples muro em uma verdadeira obra de arte. Mais do que uma
-            atividade artística, o projeto representou a...
-            <strong>Ler Mais</strong>
-          </p>
-          <div class="divisor-post"></div>
-          <p class="author-post">por <span>@ Aaaaaaa Aaaaa</span></p>
-        </div>
+        <CardPost
+          v-for="post in posts"
+          :key="post.title"
+          :image="post.image"
+          :category="post.category"
+          :category-color="post.categoryColor"
+          :title="post.title"
+          :content="post.content"
+          :author="post.author"
+        />
       </div>
       <router-link class="link-btn" to="#">
         <button class="btn">Ver Mais</button>
@@ -596,83 +602,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.text-categorie {
-  font-size: 11px;
-  font-family: var(--primary-font);
-  color: #da4167;
-  margin: 0;
-  padding: 0.75rem 0.75rem 0;
-  letter-spacing: 0.5px;
-}
-
-.title-post {
-  font-size: 20px;
-  font-weight: 500;
-  font-family: var(--secondary-font);
-  margin: 0;
-  padding: 0.25rem 0.75rem 0;
-  line-height: 1.3;
-}
-
-.brief-content {
-  font-size: 11px;
-  font-family: var(--primary-font);
-  margin: 0;
-  font-weight: 300;
-  padding: 0.5rem 0.75rem;
-  line-height: 1.65;
-  color: #555;
-  flex: 1;
-}
-
-.brief-content strong {
-  color: var(--color-green);
-  font-weight: 600;
-}
-
-.divisor-post {
-  width: 92%;
-  height: 1px;
-  background-color: #ececec;
-  margin: 0 auto;
-}
-
-.author-post {
-  font-size: 11px;
-  font-family: var(--primary-font);
-  color: #333;
-  margin: 0;
-  padding: 0.5rem 0.75rem 1rem;
-}
-
-.author-post span {
-  color: #da4167;
-  font-weight: 500;
 }
 
 .link-btn {
