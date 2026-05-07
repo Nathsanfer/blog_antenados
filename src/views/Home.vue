@@ -31,13 +31,13 @@ export default {
 
       // Map the view fields to the CardPost props
       this.posts = (data || []).map((p) => ({   
+        id: p.id,
         image: p.cover_image_url || "../assets/post.jpg",
         category: p.category_name || "",
         categoryColor: p.category_color || "#da4167",
         title: p.title || "",
         content: p.subtitle || "",
         author: p.author_name || "",
-        id: p.id,
       }));
     } catch (e) {
       console.error("Erro ao buscar posts:", e);
@@ -195,7 +195,8 @@ export default {
       <div class="posts">
         <CardPost
           v-for="post in posts"
-          :key="post.title"
+          :key="post.id"
+          :id="post.id"
           :image="post.image"
           :category="post.category"
           :category-color="post.categoryColor"
