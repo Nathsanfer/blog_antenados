@@ -1,35 +1,47 @@
 <script>
 import { supabase } from "../composables/useSupabase.js";
-import { useRoute } from "vue-router";
 import HeaderTemplate from "../components/HeaderTemplate.vue";
 import FooterTemplate from "../components/FooterTemplate.vue";
+import CardPostSidebar from "../components/CardPostSidebar.vue";
+
 
 export default {
   name: "BlogDetalhe",
   components: {
     HeaderTemplate,
     FooterTemplate,
+    CardPostSidebar,
   },
   data() {
     return {
       article: null,
+      posts: [],
     };
   },
   async mounted() {
-    const route = useRoute();
-    const postId = route.params.id;
+    await this.loadArticle(this.$route.params.id);
+  },
+  watch: {
+    "$route.params.id": {
+      immediate: false,
+      async handler(newId) {
+        await this.loadArticle(newId);
+      },
+    },
+  },
+  methods: {
+    async loadArticle(postId) {
+      if (!postId) {
+        console.warn("ID do artigo não fornecido");
+        return;
+      }
 
-    if (!postId) {
-      console.warn("ID do artigo não fornecido");
-      return;
-    }
-
-    try {
-      const { data, error } = await supabase
-        .from("post_articles")
-        .select("*")
-        .eq("id", postId)
-        .limit(1);
+      try {
+        const { data, error } = await supabase
+          .from("post_articles")
+          .select("*")
+          .eq("id", postId)
+          .limit(1);
 
         if (error) {
           console.error("Erro ao buscar os dados do artigo:", error);
@@ -47,16 +59,35 @@ export default {
             content: a.content || "",
             author: a.author_name || "",
             authorPosition: a.author_position || "",
-            authorImage: a.author_avatar || "../assets/author.png",  
+            authorImage: a.author_avatar || "../assets/author.png",
             publishedAt: a.published_at || a.created_at || "",
             id: a.id,
           };
         }
-    } catch (e) {
-      console.error("Erro ao buscar os dados do artigo:", e);
-    } 
-  },
-  methods: {
+
+        const { data: sidebarData, error: sidebarError } = await supabase
+          .from("post_cards")
+          .select("*")
+          .neq("id", postId)
+          .order("created_at", { ascending: false })
+          .limit(5);
+
+        if (sidebarError) {
+          console.error("Erro ao buscar os cards do sidebar:", sidebarError);
+          return;
+        }
+
+        this.posts = (sidebarData || []).map((p) => ({
+          id: p.id,
+          image: p.cover_image_url || "../assets/post.jpg",
+          category: p.category_name || "",
+          categoryColor: p.category_color || "#da4167",
+          title: p.title || "",
+        }));
+      } catch (e) {
+        console.error("Erro ao buscar os dados do artigo:", e);
+      }
+    },
     formatContent(text) {
       if (!text) return '';
       return text.replace(/\n/g, '<br>');
@@ -111,41 +142,19 @@ export default {
       </div>
       <h3 class="title-sidebar">Encontre Mais...</h3>
       <ul class="list-cards">
-        <li class="card">
-          <img src="../assets/post.jpg" alt="" />
-          <div class="info">
-            <h4>Nome do artigo criado por Nathalia Santos</h4>
-            <p>Categoria do artigo</p>
-          </div>
-        </li>
-        <li class="card">
-          <img src="../assets/post.jpg" alt="" />
-          <div class="info">
-            <h4>Nome do artigo criado por Nathalia Santos</h4>
-            <p>Categoria do artigo</p>
-          </div>
-        </li>
-        <li class="card">
-          <img src="../assets/post.jpg" alt="" />
-          <div class="info">
-            <h4>Nome do artigo criado por Nathalia Santos</h4>
-            <p>Categoria do artigo</p>
-          </div>
-        </li>
-        <li class="card">
-          <img src="../assets/post.jpg" alt="" />
-          <div class="info">
-            <h4>Nome do artigo criado por Nathalia Santos</h4>
-            <p>Categoria do artigo</p>
-          </div>
-        </li>
-        <li class="card">
-          <img src="../assets/post.jpg" alt="" />
-          <div class="info">
-            <h4>Nome do artigo criado por Nathalia Santos</h4>
-            <p>Categoria do artigo</p>
-          </div>
-        </li>
+        <template v-if="posts.length">
+          <CardPostSidebar
+            v-for="post in posts"
+            :key="post.id"
+            :id="post.id"
+            :image="post.image"
+            :category="post.category"
+            :category-color="post.categoryColor"
+            :title="post.title"
+            :content="post.content"
+            :author="post.author"
+          />
+        </template>
       </ul>
       <button class="btn-sidebar">Ver Mais</button>
     </aside>

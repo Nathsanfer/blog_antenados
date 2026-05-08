@@ -62,10 +62,11 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .card {
   display: flex;
   flex-direction: column;
+  align-items: start;
   background: #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
@@ -74,6 +75,7 @@ export default {
     transform 0.25s ease,
     box-shadow 0.25s ease;
   cursor: pointer;
+  height: 100%;
 }
 
 .card:hover {
@@ -109,7 +111,7 @@ export default {
 }
 
 .brief-content {
-  font-size: 11px;
+  font-size: 10.5px;
   font-family: var(--primary-font);
   margin: 0;
   font-weight: 300;
